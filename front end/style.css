@@ -117,44 +117,50 @@ header {
 }
 
 .mockup {
-    place-items: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+        "a a a a"
+        "b b c c";
+
     width: min(100%, 700px);
     height: 520px;
+
+    padding: 20px;
+    gap: 15px;
+
     border: 1px solid #30303a;
     border-radius: 35px;
     background: linear-gradient(145deg, #19191f, #0f0f14);
     box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
 
+    overflow: hidden;
 }
 
-
-.logo {
-    grid-area: a
+.mockup .logo {
+    grid-area: a;
 }
 
-.celular {
-    grid-area: b
+.mockup .celular {
+    grid-area: b;
 }
 
-.celular1 {
-    grid-area: c
+.mockup .celular1 {
+    grid-area: c;
 }
 
 .mockup img {
-    display: grid;
-    grid-template-areas:
-        "a a a"
-        "a a a";
+    width: 100%;
+    height: 100%;
 
-    width: 690px;
-    height: 250px;
-    border: 1px solid #30303a;
-    border-radius: 35px;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    min-width: 0;
+    min-height: 0;
+
     object-fit: cover;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin: 5px;
+
+    border: 1px solid #30303a;
+    border-radius: 20px;
 }
 
 .solucao-detalhes {
