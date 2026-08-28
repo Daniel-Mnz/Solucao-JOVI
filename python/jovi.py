@@ -111,11 +111,15 @@ def escolher_pasta():
     print("4 - Eventos/Aniversários")
     print("5 - Outros")
 
-    escolha = int(input("\nDigite o número da pasta: "))
+    escolha = input("\nDigite o número da pasta: ")
 
-    while escolha < 1 or escolha > 5:
+    opcoes_validas = ["1", "2", "3", "4", "5"]
+
+    while escolha not in opcoes_validas:
         print("Opção inválida.")
-        escolha = int(input("Digite o número da pasta: "))
+        escolha = input("Digite o número da pasta: ")
+
+    escolha = int(escolha)
 
     if escolha == 1:
         return "Viagens"
@@ -168,9 +172,28 @@ def cadastrar_foto():
     print("================================")
 
     nome = input("Nome da foto: ")
+
+    while nome == "":
+        print("O nome não pode ficar vazio.")
+        nome = input("Nome da foto: ")
+
     categoria = input("Categoria: ")
+
+    while categoria == "":
+        print("A categoria não pode ficar vazia.")
+        categoria = input("Categoria: ")
+
     local = input("Local: ")
+
+    while local == "":
+        print("O local não pode ficar vazio.")
+        local = input("Local: ")
+
     evento = input("Evento: ")
+
+    while evento == "":
+        print("O evento não pode ficar vazio.")
+        evento = input("Evento: ")
 
     nova_foto = {
         "nome": nome,
