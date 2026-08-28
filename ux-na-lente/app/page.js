@@ -1,31 +1,19 @@
 import Header from "../components/header";
 import Sidebar from "../components/sidebar";
-import Main from "../components/main";
-import Scanner from "../components/scanner";
-import Seletor from "../components/seletor";
+import Conteudo from "../components/conteudo";
 
 export default function Home() {
     return (
-        <div className="pagina">
-
+        <div>
             <Header />
 
             <div className="layout">
 
                 <Sidebar />
 
-                <div className="conteudo">
-
-                    <Main />
-
-                    <Scanner />
-
-                    <Seletor />
-
-                </div>
+                <Conteudo />
 
             </div>
-
         </div>
     );
 }

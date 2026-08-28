@@ -86,3 +86,70 @@ a {
     flex: 1;
     padding: 40px;
 }
+
+.conteudo-principal {
+    max-width: 900px;
+}
+
+.hero {
+    padding: 40px;
+    margin-bottom: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+}
+
+.hero h2 {
+    margin: 0 0 15px 0;
+    font-size: 32px;
+}
+
+.hero p {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.sobre {
+    padding: 30px;
+    margin-bottom: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+}
+
+.sobre h2 {
+    margin: 0 0 15px 0;
+}
+
+.sobre p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.acessibilidade {
+    padding: 30px;
+    margin-bottom: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+}
+
+.acessibilidade h2 {
+    margin: 0 0 15px 0;
+}
+
+.acessibilidade p {
+    margin: 0 0 20px 0;
+    line-height: 1.6;
+}
+
+.acessibilidade button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    background-color: #222222;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.acessibilidade button:hover {
+    background-color: #444444;
+}
