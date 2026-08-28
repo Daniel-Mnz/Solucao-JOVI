@@ -2,6 +2,7 @@ import Main from "./main";
 import Scanner from "./scanner";
 import Seletor from "./seletor";
 import Acessibilidade from "./acessibilidade";
+import Slideshow from "./slideshow";
 
 export default function Conteudo() {
     return (
@@ -14,6 +15,8 @@ export default function Conteudo() {
             <Seletor />
 
             <Acessibilidade />
+
+            <Slideshow />
 
         </div>
     );

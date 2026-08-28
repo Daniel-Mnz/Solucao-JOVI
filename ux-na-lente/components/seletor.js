@@ -6,10 +6,26 @@ export default function Seletor() {
 
     const [mensagem, setMensagem] = useState("");
 
+    const pastas = [
+        "Trabalho",
+        "Viagem",
+        "Documentos",
+        "Família",
+        "Estudos",
+        "Projetos"
+    ];
+
     function organizarFoto() {
+
+        const indiceSorteado = Math.floor(Math.random() * pastas.length);
+
+        const pastaEscolhida = pastas[indiceSorteado];
+
         setMensagem(
-            "Foto analisada! A pasta recomendada para esta foto foi selecionada."
+            `Foto analisada! A pasta recomendada para esta foto foi "${pastaEscolhida}".`
         );
+
+        localStorage.setItem("ultimaPastaSugerida", pastaEscolhida);
     }
 
     return (

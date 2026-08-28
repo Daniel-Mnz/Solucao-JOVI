@@ -1,9 +1,10 @@
 "use client";
 
-export default function Sidebar() {
+export default function Sidebar({ aoSair }) {
 
     function sair() {
         alert("Você saiu do UX na Lente.");
+        aoSair();
     }
 
     return (
@@ -13,10 +14,10 @@ export default function Sidebar() {
 
             <nav className="sidebar-nav">
                 <a href="#">Início</a>
-                <a href="#">Scanner</a>
-                <a href="#">Seletor de destino</a>
-                <a href="#">Acessibilidade</a>
-                <a href="#">Demonstração</a>
+                <a href="#scanner">Scanner</a>
+                <a href="#seletor">Seletor de destino</a>
+                <a href="#acessibilidade">Acessibilidade</a>
+                <a href="#slideshow">Demonstração</a>
             </nav>
 
             <button className="btn-sair" onClick={sair}>

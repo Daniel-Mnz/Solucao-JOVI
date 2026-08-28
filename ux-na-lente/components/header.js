@@ -1,4 +1,4 @@
-export default function Header() {
+export default function Header({ usuarioLogado }) {
     return (
         <header className="header">
 
@@ -7,6 +7,12 @@ export default function Header() {
             <p>
                 Melhorando a experiência do usuário na câmera da JOVI
             </p>
+
+            {usuarioLogado && (
+                <p className="saudacao-usuario">
+                    Bem-vindo, {usuarioLogado}
+                </p>
+            )}
 
         </header>
     );
