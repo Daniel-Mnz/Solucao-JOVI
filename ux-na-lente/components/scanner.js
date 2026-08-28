@@ -1,4 +1,17 @@
+"use client";
+
+import { useState } from "react";
+
 export default function Scanner() {
+
+    const [mensagem, setMensagem] = useState("");
+
+    function utilizarScanner() {
+        setMensagem(
+            "Scanner ativado! O documento será identificado e enquadrado automaticamente."
+        );
+    }
+
     return (
         <section id="scanner" className="scanner">
 
@@ -9,9 +22,15 @@ export default function Scanner() {
                 ajusta o enquadramento e facilita o salvamento da imagem.
             </p>
 
-            <button>
+            <button onClick={utilizarScanner}>
                 Utilizar scanner
             </button>
+
+            {mensagem && (
+                <p className="mensagem-scanner">
+                    {mensagem}
+                </p>
+            )}
 
         </section>
     );

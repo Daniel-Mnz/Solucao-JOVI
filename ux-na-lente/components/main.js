@@ -1,26 +1,14 @@
 export default function Main() {
     return (
-        <main className="conteudo-principal">
+        <section className="main-content">
 
-            <section className="hero">
-                <h2>Uma nova experiência para suas fotos</h2>
+            <h1>Bem-vindo ao UX na Lente</h1>
 
-                <p>
-                    O UX na Lente busca tornar o uso da câmera
-                    mais simples, organizado e acessível.
-                </p>
-            </section>
+            <p>
+                Uma experiência mais simples e inteligente
+                para organizar suas fotos.
+            </p>
 
-            <section className="sobre">
-                <h2>O problema</h2>
-
-                <p>
-                    Usuários podem encontrar dificuldades para
-                    organizar fotos, identificar documentos e
-                    encontrar rapidamente aquilo que precisam.
-                </p>
-            </section>
-
-        </main>
+        </section>
     );
 }

@@ -1,24 +1,25 @@
+"use client";
+
 export default function Sidebar() {
+
+    function sair() {
+        alert("Você saiu do UX na Lente.");
+    }
+
     return (
         <aside className="sidebar">
 
-            <div className="sidebar-logo">
-                <h2>UX na Lente</h2>
-            </div>
+            <h2>UX na Lente</h2>
 
-            <nav className="menu">
-
-                <a href="#scanner">Scanner</a>
-
-                <a href="#seletor">Seletor de Destino</a>
-
-                <a href="#acessibilidade">Acessibilidade</a>
-
-                <a href="#demonstracao">Demonstração</a>
-
+            <nav className="sidebar-nav">
+                <a href="#">Início</a>
+                <a href="#">Scanner</a>
+                <a href="#">Seletor de destino</a>
+                <a href="#">Acessibilidade</a>
+                <a href="#">Demonstração</a>
             </nav>
 
-            <button className="botao-sair">
+            <button className="btn-sair" onClick={sair}>
                 Sair
             </button>
 

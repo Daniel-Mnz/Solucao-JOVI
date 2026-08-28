@@ -1,4 +1,17 @@
+"use client";
+
+import { useState } from "react";
+
 export default function Seletor() {
+
+    const [mensagem, setMensagem] = useState("");
+
+    function organizarFoto() {
+        setMensagem(
+            "Foto analisada! A pasta recomendada para esta foto foi selecionada."
+        );
+    }
+
     return (
         <section id="seletor" className="seletor">
 
@@ -10,9 +23,15 @@ export default function Seletor() {
                 e localização.
             </p>
 
-            <button>
+            <button onClick={organizarFoto}>
                 Organizar foto
             </button>
+
+            {mensagem && (
+                <p className="mensagem-seletor">
+                    {mensagem}
+                </p>
+            )}
 
         </section>
     );
