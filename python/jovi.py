@@ -42,11 +42,21 @@ def listar_fotos():
 def selecionar_foto():
     listar_fotos()
 
-    escolha = int(input("\nEscolha uma foto: "))
+    escolha = input("\nEscolha uma foto: ")
 
-    while escolha < 1 or escolha > len(fotos):
+    opcoes_validas = []
+
+    numero = 1
+
+    while numero <= len(fotos):
+        opcoes_validas.append(str(numero))
+        numero = numero + 1
+
+    while escolha not in opcoes_validas:
         print("Opção inválida.")
-        escolha = int(input("Escolha uma foto: "))
+        escolha = input("Escolha uma foto: ")
+
+    escolha = int(escolha)
 
     foto = fotos[escolha - 1]
 
@@ -190,6 +200,15 @@ def fotos_organizadas():
     if encontrou == False:
         print("Nenhuma foto foi organizada ainda.")
 
+def escolher_opcao():
+    opcao = input("Escolha uma opção: ")
+
+    while opcao != "1" and opcao != "2" and opcao != "3" and opcao != "4" and opcao != "5":
+        print("Opção inválida.")
+        opcao = input("Escolha uma opção: ")
+
+    return int(opcao)
+
 
 def menu():
     opcao = 0
@@ -205,7 +224,7 @@ def menu():
         print("5 - Sair")
         print("================================")
 
-        opcao = int(input("Escolha uma opção: "))
+        opcao = escolher_opcao()
 
         if opcao == 1:
             cadastrar_foto()
