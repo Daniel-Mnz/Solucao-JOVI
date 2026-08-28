@@ -262,7 +262,7 @@ def menu():
             fotos_organizadas()
 
         elif opcao == 5:
-            print("\nEncerrando a JOVI...")
+            print("\nEncerrando a simulação...")
 
         else:
             print("\nOpção inválida.")
