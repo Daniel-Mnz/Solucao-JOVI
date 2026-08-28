@@ -22,3 +22,22 @@ RM: 574190
 
 ```bash
 git clone https://github.com/Daniel-Mnz/Solucao-JOVI.git
+```
+2. Instale as dependências:
+```npm install```
+
+3. Execute o projeto:
+```npm run dev```
+
+4. Abra o endereço abaixo no navegador:
+```http://localhost:3000```
+
+## Inteligencia artificial
+
+A inteligência artificial foi utilizada principalmente para correção de sintaxe, além disso, foi utilizada no processo de criação da página de login, mais específicamente na validação de dados.
+
+## Acessar projeto na Vercel:
+
+```https://solucao-jovi.vercel.app/```
+
+
