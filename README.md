@@ -123,12 +123,12 @@ O desenvolvimento envolveu pesquisa, UX/UI, prototipação, programação e dese
 
 🚧 **Em desenvolvimento**
 
-O JOVI continua evoluindo com novas funcionalidades e melhorias na experiência do usuário.
+O UX Na Lente continua evoluindo com novas funcionalidades e melhorias na experiência do usuário.
 
 ---
 
 <div align="center">
 
-**📸 JOVI — tornando a organização de fotografias mais simples.**
+**📸 UX Na Lente — tornando a organização de fotografias mais simples.**
 
 </div>
