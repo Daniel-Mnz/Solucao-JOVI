@@ -5,7 +5,7 @@ import Acessibilidade from "./acessibilidade";
 
 export default function Conteudo() {
     return (
-        <div className="conteudo">
+        <div className="flex-1 p-4 md:p-10">
 
             <Main />
 

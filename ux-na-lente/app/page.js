@@ -43,7 +43,7 @@ export default function Home() {
         <div>
             <Header usuarioLogado={usuarioLogado} />
 
-            <div className="layout">
+           <div className="flex flex-col md:flex-row min-h-[calc(100vh-100px)]">
 
                 <Sidebar aoSair={sair} />
 

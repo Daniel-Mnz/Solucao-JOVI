@@ -23,14 +23,17 @@ export default function Login({ aoLogar }) {
     }
 
     return (
-        <section className="login-page">
-            <div className="login-card">
+        <section className="min-h-screen flex justify-center items-center bg-zinc-800 p-4">
+            <div className="w-full max-w-[340px] bg-white p-10 rounded-xl flex flex-col gap-4">
 
-                <h1>UX na Lente</h1>
+                <h1 className="text-center text-3xl font-bold">UX na Lente</h1>
 
-                <p>Entre para acessar o projeto</p>
+                <p className="text-center text-gray-600">
+                    Entre para acessar o projeto
+                </p>
 
                 <input
+                    className="p-3 border border-gray-300 rounded-md text-base outline-none focus:border-zinc-800"
                     value={usuario}
                     onChange={(e) => setUsuario(e.target.value)}
                     type="text"
@@ -38,17 +41,23 @@ export default function Login({ aoLogar }) {
                 />
 
                 <input
+                    className="p-3 border border-gray-300 rounded-md text-base outline-none focus:border-zinc-800"
                     value={senha}
                     onChange={(e) => setSenha(e.target.value)}
                     type="password"
                     placeholder="Senha"
                 />
 
-                <button onClick={entrar}>
+                <button
+                    className="p-3 rounded-md bg-zinc-800 text-white text-base cursor-pointer hover:bg-zinc-600"
+                    onClick={entrar}
+                >
                     Entrar
                 </button>
 
-                <p className="mensagem-erro">{mensagemErro}</p>
+                <p className="min-h-[18px] text-center text-sm text-red-600">
+                    {mensagemErro}
+                </p>
 
             </div>
         </section>

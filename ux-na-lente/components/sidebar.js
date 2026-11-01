@@ -8,11 +8,11 @@ export default function Sidebar({ aoSair }) {
     }
 
     return (
-        <aside className="w-60 min-h-[calc(100vh-100px)] p-6 bg-white border-r border-gray-300 flex flex-col dark:bg-zinc-900 dark:border-zinc-700 dark:text-zinc-100">
+        <aside className="w-full md:w-60 md:min-h-[calc(100vh-100px)] p-6 bg-white border-b md:border-b-0 md:border-r border-gray-300 flex flex-col dark:bg-zinc-900 dark:border-zinc-700 dark:text-zinc-100">
 
-            <h2 className="text-2xl font-bold mb-8">UX na Lente</h2>
+            <h2 className="text-2xl font-bold mb-4 md:mb-8">UX na Lente</h2>
 
-            <nav className="flex flex-col gap-5">
+            <nav className="flex flex-row flex-wrap md:flex-col gap-4 md:gap-5">
                 <a href="#" className="hover:opacity-60">Início</a>
                 <a href="#scanner" className="hover:opacity-60">Scanner</a>
                 <a href="#seletor" className="hover:opacity-60">Seletor de destino</a>
@@ -20,7 +20,7 @@ export default function Sidebar({ aoSair }) {
             </nav>
 
             <button
-                className="w-full p-3 mt-auto rounded-md bg-zinc-800 text-white font-bold cursor-pointer hover:bg-zinc-600 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-300"
+                className="w-full p-3 mt-6 md:mt-auto rounded-md bg-zinc-800 text-white font-bold cursor-pointer hover:bg-zinc-600 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-300"
                 onClick={sair}
             >
                 Sair
