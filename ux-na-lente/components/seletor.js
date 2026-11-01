@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Seletor() {
 
     const [mensagem, setMensagem] = useState("");
+    const [historico, setHistorico] = useState([]);
 
     const pastas = [
         "Trabalho",
@@ -14,6 +15,14 @@ export default function Seletor() {
         "Estudos",
         "Projetos"
     ];
+
+    useEffect(() => {
+        const salvo = localStorage.getItem("historicoPastas");
+
+        if (salvo) {
+            setHistorico(JSON.parse(salvo));
+        }
+    }, []);
 
     function organizarFoto() {
 
@@ -25,7 +34,22 @@ export default function Seletor() {
             `Foto analisada! A pasta recomendada para esta foto foi "${pastaEscolhida}".`
         );
 
+        const novoItem = {
+            pasta: pastaEscolhida,
+            data: new Date().toLocaleString("pt-BR")
+        };
+
+        const novoHistorico = [novoItem, ...historico].slice(0, 5);
+
+        setHistorico(novoHistorico);
+
+        localStorage.setItem("historicoPastas", JSON.stringify(novoHistorico));
         localStorage.setItem("ultimaPastaSugerida", pastaEscolhida);
+    }
+
+    function limparHistorico() {
+        setHistorico([]);
+        localStorage.removeItem("historicoPastas");
     }
 
     return (
@@ -50,6 +74,35 @@ export default function Seletor() {
                 <p className="mt-4 p-3 bg-gray-100 rounded-md text-sm dark:bg-zinc-800">
                     {mensagem}
                 </p>
+            )}
+
+            {historico.length > 0 && (
+                <div className="mt-6">
+
+                    <div className="flex justify-between items-center mb-3">
+                        <h3 className="text-lg font-bold">Últimas sugestões</h3>
+
+                        <button
+                            className="text-sm underline cursor-pointer hover:opacity-60"
+                            onClick={limparHistorico}
+                        >
+                            Limpar histórico
+                        </button>
+                    </div>
+
+                    <ul className="flex flex-col gap-2">
+                        {historico.map((item, indice) => (
+                            <li
+                                key={indice}
+                                className="flex flex-col sm:flex-row sm:justify-between p-3 bg-gray-100 rounded-md text-sm dark:bg-zinc-800"
+                            >
+                                <span className="font-bold">{item.pasta}</span>
+                                <span className="text-gray-600 dark:text-zinc-400">{item.data}</span>
+                            </li>
+                        ))}
+                    </ul>
+
+                </div>
             )}
 
         </section>
