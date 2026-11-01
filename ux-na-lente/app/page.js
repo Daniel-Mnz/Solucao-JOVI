@@ -1,40 +1,28 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Header from "../components/header";
 import Sidebar from "../components/sidebar";
 import Conteudo from "../components/conteudo";
 import Login from "../components/login";
 import Landing from "../components/landing";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 export default function Home() {
 
-    const [usuarioLogado, setUsuarioLogado] = useState(null);
-    const [carregando, setCarregando] = useState(true);
+    const [usuarioLogado, setUsuarioLogado, carregado] = useLocalStorage("usuarioLogado", null);
     const [mostrarLogin, setMostrarLogin] = useState(false);
 
-    useEffect(() => {
-        const usuarioSalvo = localStorage.getItem("usuarioLogado");
-
-        if (usuarioSalvo) {
-            setUsuarioLogado(usuarioSalvo);
-        }
-
-        setCarregando(false);
-    }, []);
-
     function aoLogar(nome) {
-        localStorage.setItem("usuarioLogado", nome);
         setUsuarioLogado(nome);
     }
 
     function sair() {
-        localStorage.removeItem("usuarioLogado");
         setUsuarioLogado(null);
         setMostrarLogin(false);
     }
 
-    if (carregando) {
+    if (!carregado) {
         return null;
     }
 

@@ -1,28 +1,18 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 export default function Acessibilidade() {
 
-    const [modoEscuro, setModoEscuro] = useState(false);
+    const [modoEscuro, setModoEscuro] = useLocalStorage("modoEscuro", false);
 
     useEffect(() => {
-        const salvo = localStorage.getItem("modoEscuro");
-
-        if (salvo === "true") {
-            setModoEscuro(true);
-            document.body.classList.add("modo-escuro");
-        }
-    }, []);
+        document.body.classList.toggle("modo-escuro", modoEscuro);
+    }, [modoEscuro]);
 
     function alternarModoEscuro() {
-        const novoValor = !modoEscuro;
-
-        setModoEscuro(novoValor);
-
-        document.body.classList.toggle("modo-escuro", novoValor);
-
-        localStorage.setItem("modoEscuro", novoValor);
+        setModoEscuro(!modoEscuro);
     }
 
     return (
