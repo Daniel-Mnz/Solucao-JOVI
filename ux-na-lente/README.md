@@ -34,7 +34,7 @@ git clone https://github.com/Daniel-Mnz/Solucao-JOVI.git
 
 ## Inteligencia artificial
 
-A inteligência artificial foi utilizada principalmente para correção de sintaxe, além disso, foi utilizada no processo de criação da página de login, mais específicamente na validação de dados.
+A inteligência artificial foi utilizada principalmente para correção de sintaxe, no processo de criação da página de login, mais específicamente na validação de dados. Além disso, utilizamos para a revisão de erros e para conectar a API
 
 ## Acessar projeto na Vercel:
 
