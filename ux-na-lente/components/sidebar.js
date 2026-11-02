@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 export default function Sidebar({ aoSair }) {
 
     function sair() {
@@ -13,10 +15,11 @@ export default function Sidebar({ aoSair }) {
             <h2 className="text-2xl font-bold mb-4 md:mb-8">UX na Lente</h2>
 
             <nav className="flex flex-row flex-wrap md:flex-col gap-4 md:gap-5">
-                <a href="#" className="hover:opacity-60">Início</a>
-                <a href="#scanner" className="hover:opacity-60">Scanner</a>
-                <a href="#seletor" className="hover:opacity-60">Seletor de destino</a>
-                <a href="#acessibilidade" className="hover:opacity-60">Acessibilidade</a>
+                <Link href="/inicio" className="hover:opacity-60">Início</Link>
+                <Link href="/inicio#scanner" className="hover:opacity-60">Scanner</Link>
+                <Link href="/inicio#seletor" className="hover:opacity-60">Seletor de destino</Link>
+                <Link href="/albuns" className="hover:opacity-60">Álbuns</Link>
+                <Link href="/inicio#acessibilidade" className="hover:opacity-60">Acessibilidade</Link>
             </nav>
 
             <button

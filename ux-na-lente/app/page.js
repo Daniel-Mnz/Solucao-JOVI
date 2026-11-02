@@ -1,50 +1,24 @@
 "use client";
 
-import { useState } from "react";
-import Header from "../components/header";
-import Sidebar from "../components/sidebar";
-import Conteudo from "../components/conteudo";
-import Login from "../components/login";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 import Landing from "../components/landing";
 import useLocalStorage from "../hooks/useLocalStorage";
 
-export default function Home() {
+export default function PaginaLanding() {
 
-    const [usuarioLogado, setUsuarioLogado, carregado] = useLocalStorage("usuarioLogado", null);
-    const [mostrarLogin, setMostrarLogin] = useState(false);
+    const router = useRouter();
+    const [usuarioLogado, , carregado] = useLocalStorage("usuarioLogado", null);
 
-    function aoLogar(nome) {
-        setUsuarioLogado(nome);
-    }
+    useEffect(() => {
+        if (carregado && usuarioLogado) {
+            router.replace("/inicio");
+        }
+    }, [carregado, usuarioLogado, router]);
 
-    function sair() {
-        setUsuarioLogado(null);
-        setMostrarLogin(false);
-    }
-
-    if (!carregado) {
+    if (!carregado || usuarioLogado) {
         return null;
     }
 
-    if (!usuarioLogado) {
-        if (!mostrarLogin) {
-            return <Landing aoEntrar={() => setMostrarLogin(true)} />;
-        }
-
-        return <Login aoLogar={aoLogar} />;
-    }
-
-    return (
-        <div>
-            <Header usuarioLogado={usuarioLogado} />
-
-            <div className="flex flex-col md:flex-row min-h-[calc(100vh-100px)]">
-
-                <Sidebar aoSair={sair} />
-
-                <Conteudo />
-
-            </div>
-        </div>
-    );
+    return <Landing aoEntrar={() => router.push("/login")} />;
 }
